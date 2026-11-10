@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#f3f6ed">
+  <title>Pedal &amp; Peak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Pedal and Peak home"><span class="brand-mark">P<span>+</span></span><span>PEDAL<span class="brand-light">&amp;PEAK</span></span></a>
+      <div class="top-note"><span class="live-dot"></span> TRAIL 01 <i>·</i> THE GREEN HILLS</div>
+      <button class="sound-button" id="soundButton" aria-label="Toggle sound">♫ <span>SOUND ON</span></button>
+    </header>
+    <section class="game-card" aria-label="Pedal and Peak bicycle game">
+      <canvas id="game" aria-label="Game canvas"></canvas>
+      <div class="hud" id="hud" hidden>
+        <div class="stat distance-stat"><span class="stat-label">DISTANCE</span><strong id="distance">0</strong><small>m</small></div>
+        <div class="stat coin-stat"><span class="coin-icon">✦</span><strong id="coins">0</strong></div>
+        <div class="fuel-wrap"><div class="fuel-label"><span>ENERGY</span><span id="fuelText">100%</span></div><div class="fuel-track"><i id="fuelBar"></i></div></div>
+        <button class="pause-button" id="pauseButton" aria-label="Pause game">Ⅱ</button>
+      </div>
+      <div class="overlay intro-overlay" id="introOverlay">
+        <div class="intro-copy"><div class="eyebrow"><span></span> YOUR NEXT GREAT ESCAPE</div><h1>Find your<br><em>own pace.</em></h1><p>Pedal the rolling hills, catch a little air<br class="desktop-only"> and see how far the trail takes you.</p>
+          <button class="primary-button" id="startButton">LET'S RIDE <span>↗</span></button>
+          <div class="control-hint"><span class="keycap">→</span> PEDAL <span class="keycap">←</span> BRAKE <span class="keycap">↑</span><span class="keycap">↓</span> LEAN</div>
+        </div>
+        <div class="intro-art"><div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="art-bike"><span class="art-wheel w1"></span><span class="art-wheel w2"></span><span class="art-frame"></span><span class="art-rider"></span></div><span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✦</span><div class="art-caption">FRESH AIR. FULL HEART.</div></div>
+      </div>
+      <div class="overlay pause-overlay" id="pauseOverlay" hidden><div class="result-card"><div class="result-icon">Ⅱ</div><div class="eyebrow">TAKE YOUR TIME</div><h2>Ride paused.</h2><p>The hills aren't going anywhere.</p><button class="primary-button" id="resumeButton">KEEP RIDING <span>↗</span></button></div></div>
+      <div class="overlay end-overlay" id="endOverlay" hidden><div class="result-card"><div class="result-icon" id="endIcon">✦</div><div class="eyebrow" id="endEyebrow">NICE LITTLE RIDE</div><h2 id="endTitle">What a view.</h2><p id="endMessage">Every hill is its own little victory.</p><div class="result-stats"><div><strong id="finalDistance">0</strong><span>METERS</span></div><div><strong id="finalCoins">0</strong><span>COINS</span></div></div><button class="primary-button" id="restartButton">RIDE AGAIN <span>↗</span></button></div></div>
+      <div class="touch-controls" id="touchControls" hidden><button class="touch-btn brake-touch" data-action="brake"><span>−</span><small>BRAKE</small></button><button class="touch-btn lean-touch" data-action="leanBack"><span>↶</span><small>LEAN</small></button><button class="touch-btn pedal-touch" data-action="pedal"><span>＋</span><small>PEDAL</small></button></div>
+      <div class="toast" id="toast" hidden></div>
+    </section>
+    <footer class="bottom-bar"><div class="tip"><span class="tip-icon">✦</span><span><b>TRAIL TIP</b> Find your rhythm on the climbs. Ease off in the air.</span></div><div class="footer-right"><span>BUILT FOR THE JOY OF THE RIDE</span><span class="footer-sun">☼</span></div></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
